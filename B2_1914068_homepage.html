@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Pizza Delivery
+        </title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js">
+
+        </script>
+    </head>
+    <body>
+        <div id="menu">
+        <div class="title">
+            <div>
+                <img id="title_image" src="logo_pizza.png" alt="">
+                <h1>Pizza</h1>
+            </div>
+            <img id="prof_pic" src="download.png" >
+        </div>
+        <nav class="nav-bar">
+            <div>
+                <p id="deals" class="item_list_btns" onclick="changeItems('deals')">Deals</p>
+                <p id="pizza" class="item_list_btns" onclick="changeItems('pizza')">Pizza</p>
+                <p id="pastas" class="item_list_btns" onclick="changeItems('pastas')">Pastas</p>
+                <p id="desserts" class="item_list_btns" onclick="changeItems('desserts')">Desserts</p>
+            </div>
+          </nav>
+          <hr class="horLine">
+          <div class="rest">
+            <div id="items">
+                <div class="items_list" id="deals_items">
+                </div>
+                <div class="items_list" id="pizza_items">
+
+                </div>
+                <div class="items_list" id="pastas_items">
+                    
+                </div>
+                <div class="items_list" id="desserts_items">
+
+                </div>
+            </div>
+            <div class="food_cart">
+                <h1>Food cart</h1>
+                <a href="#"><button class="checkout_btn">Check out</button></a>
+            </div>
+        </div>
+        
+        </div>
+        <div id="cartModal" class="modal">
+
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Food cart</h2>
+              </div>
+              <div class="modal-body" id="fc_list">
+              </div>
+              <div class="modal-footer">
+                  <button class="exit_btn" onclick="checkout()">
+                      Check out
+                  </button>
+                  <button class='clear_btn' onclick="clear_cart()">
+                    Clear cart
+                </button>
+              </div>
+            </div>
+          
+          </div>
+        <div id="Check_out">
+            <div class="title">
+                <div>
+                    <img id="title_image" src="logo_pizza.png" alt="">
+                    <h1>Pizza</h1>
+                </div>
+                <img id="back_png" onclick="go_back()" src="back.png" >
+            </div>
+            <hr class="horLine">
+            <div class="box">
+                <h3>Check out</h3>
+                <form action="#" name="testForm" id="testForm">
+                    <input type="text" class="form_control" name="name" placeholder="Please enter your name here"/>
+                    <input type="text" class="form_control" name="phoneNumber" placeholder="Enter your phone number">
+                    <input type="text" class="form_control address" name="flat" placeholder="Flat no./ Wing/ Apartment name">
+                    <input type="text" class="form_control address" name="locality" placeholder="Locality">
+                    <input type="text" class="form_control address" name="city" placeholder="City, Pin code"><br>
+                    <div class="voucher_stat">
+                        <label for="if_voucher">Do you have voucher code?</label>
+                        <input type="checkbox" class="check_box" onclick="display_vouch()" name="if_voucher"><br>
+                        <input type="text" class="form_control voucher_form" onkeyup="total_price()" name="voucher_code" placeholder="Enter voucher code">
+                    </div>
+                    <h3 id='final'>Final amount : </h3>
+                    <input type="submit" onclick="validateForm()" class="submit_control" value="Confirm" />
+                </form>
+            </div>
+        </div>
+        <div id='Exit_page'>
+            <h1>Thank you!!</h1>
+            <a href='B2_1914068_homepage.html'>Exit</a>
+        </div>
+    </body>
+</html>

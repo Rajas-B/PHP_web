@@ -1,0 +1,159 @@
+<html>
+<head>
+<title>Exp 2</title>
+<link rel="stylesheet" href="Form.css">
+<style>
+  .correct_ans{
+    font-size: large;
+    font-weight: bold;
+    color: green;
+  }
+  .wrong_ans{
+    font-size: large;
+    font-weight: bold;
+    color: red;
+  }
+</style>
+</head>
+<body>
+<h1 align="center">Introduction to Data Communications Quiz</h1>
+<hr>
+<form align="center">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name">
+</form>
+<ol >
+<li>Which of the following is NOT a type of transmission media?
+<form>
+<ol>
+  <li><input  type="radio" id="Option 1" name="question_1" value="Coaxial">
+  <label for="Option 1">Coaxial</label><br>
+  <li><input type="radio" id="Option 2" name="question_1" value="Twisted Pair">
+  <label for="Option 2">Twisted Pair</label><br>
+  <li><input type="radio" id="Option 3" name="question_1" value="Modem">
+  <label for="Option 3">Modem</label><br>
+  <li><input type="radio" id="Option 3" name="question_1" value="Microwave">
+  <label for="Option 4">Microwave</label>
+  <p id='answer_1' class='correct_ans'></p>
+</ol>
+</form>
+</li>
+<li>The office gave you a mobile device to access its VPN, email and messaging services. You are the proud owner of a/an:
+<form>
+<ol>
+  <li><input  type="radio" id="Option 1" name="question_2" value="I pod">
+  <label for="Option 1">I pod</label><br>
+  <li><input type="radio" id="Option 2" name="question_2" value="Web cam">
+  <label for="Option 2">Web cam</label><br>
+  <li><input type="radio" id="Option 3" name="question_2" value="Flash Drive">
+  <label for="Option 3">Flash Drive</label><br>
+  <li><input type="radio" id="Option 3" name="question_2" value="Smart Phone">
+  <label for="Option 4">Smart Phone</label>
+  <p id='answer_2'></p>
+</ol>
+</form>
+</li>
+<li>The company offers you the ability to surf the web from your home, check email and download software, you have just subscribed to:
+<form>
+<ol>
+  <li><input  type="radio" id="Option 1" name="question_3" value="An Internet Service Provider">
+  <label for="Option 1">An Internet Service Provider</label><br>
+  <li><input type="radio" id="Option 2" name="question_3" value="Flow">
+  <label for="Option 2">Flow</label><br>
+  <li><input type="radio" id="Option 3" name="question_3" value="Lime">
+  <label for="Option 3">Lime</label><br>
+  <li><input type="radio" id="Option 3" name="question_3" value="Internet Development Company">
+  <label for="Option 4">Internet Development Company</label>
+  <p id='answer_3'></p>
+</ol>
+</form>
+</li>
+<li>Persons at a downtown cafe realized that they were able to access the internet on their laptops. The Cafe could be considered a:
+<form>
+<ol>
+  <li><input  type="radio" name="question_4" id="Option 1" value="Metropolitan Area Network">
+  <label for="Option 1">Metropolitan Area Network</label><br>
+  <li><input type="radio" id="Option 2" name="question_4" value="Hot spot">
+  <label for="Option 2">Hot spot</label><br>
+  <li><input type="radio" id="Option 3" name="question_4" value="Local Area Network">
+  <label for="Option 3">Local Area Network</label><br>
+  <li><input type="radio" id="Option 3" name="question_4" value="Satellite">
+  <label for="Option 4">Satellite</label>
+  <p id='answer_4'></p>
+</ol>
+</form>
+</li>
+<li>Which of the following items CANNOT be sent via email?
+<form>
+<ol>
+  <li><input  type="radio" id="Option 1" name="question_5" value="Text Documents">
+  <label for="Option 1">Text Documents</label><br>
+  <li><input type="radio" id="Option 2" name="question_5" value="Parcels">
+  <label for="Option 2">Parcels</label><br>
+  <li><input type="radio" id="Option 3" name="question_5" value="Sound Filters">
+  <label for="Option 3">Sound Filters</label><br>
+  <li><input type="radio" id="Option 3" name="question_5" value="Graphics Images">
+  <label for="Option 4">Graphics Images</label>
+  <p id='answer_5'></p>
+</ol>
+</form>
+</li>
+</ol>
+<h2 id="result"></h2>
+<button onclick="formValidate()">Submit</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    
+  });
+  correct_answers = {
+    "1": "Modem",
+    "2": "Smart Phone",
+    "3": "An Internet Service Provider",
+    "4": "Local Area Network",
+    "5": "Parcels"
+  }
+  questions = {}
+  var score = 0;
+  function formValidate() {
+        var name = document.getElementById('name').value;
+        var answered = false;
+              if(name==""){
+              alert("Enter a name");
+          }else{
+              var regex = /^[a-zA-Z\s]+$/i;
+              if(regex.test(name)===false){
+                  alert("Enter a valid name");
+              }
+          }
+            for(i = 1; i < 6; i++) {
+              var ele = document.getElementsByName(`question_${i}`);
+              answered = false;
+              for(j = 0; j < ele.length; j++) {
+                if(ele[j].checked){
+                  answered = true;
+                  questions[`question_${i}`] = ele[j].value;
+                }
+              }
+              if(!answered){
+                questions[`question_${i}`] = '';
+                alert(`Question ${i} was not answered`);
+              }
+            }
+            for(key in correct_answers){
+              if(correct_answers[key] == questions[`question_${key}`]){
+                document.getElementById(`answer_${key}`).className = 'correct_ans';
+                document.getElementById(`answer_${key}`).innerHTML = 'Correctly answered';
+                score += 1; 
+              }else{
+                document.getElementById(`answer_${key}`).className = 'wrong_ans';
+                document.getElementById(`answer_${key}`).innerHTML = 'Wrong answer';
+              }
+            }
+
+            document.getElementById('result').innerHTML = `Your score was ${score}`;
+          }
+</script>
+
+</body>
+</html>
