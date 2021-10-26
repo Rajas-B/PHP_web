@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pizza Delivery</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="menu">
+      <div class="title">
+        <div>
+          <img id="title_image" src="logo_pizza.png" alt="" />
+          <h1>Pizza</h1>
+        </div>
+        <div class="right-icons">
+          <img id="profpic" src="profile/user.png" />
+        </div>
+        <div class="sidebar" style="display: none" id="profile-details">
+          <span class="close-btn">&times;</span>
+          <a href="#" class="edit-profile">Edit Profile</a>
+          <a href="#" class="prev-orders">Previous Orders</a>
+          <a href="#" class="sign-out">Sign Out</a>
+        </div>
+      </div>
+      <nav class="nav-bar">
+        <div>
+          <p id="deals" class="item_list_btns" onclick="changeItems('deals')">
+            Deals
+          </p>
+          <p id="pizza" class="item_list_btns" onclick="changeItems('pizza')">
+            Pizza
+          </p>
+          <p id="pastas" class="item_list_btns" onclick="changeItems('pastas')">
+            Pastas
+          </p>
+          <p
+            id="desserts"
+            class="item_list_btns"
+            onclick="changeItems('desserts')"
+          >
+            Desserts
+          </p>
+        </div>
+      </nav>
+      <hr class="horLine" />
+      <div class="rest">
+        <div id="items">
+          <div class="items_list" id="deals_items"></div>
+          <div class="items_list" id="pizza_items"></div>
+          <div class="items_list" id="pastas_items"></div>
+          <div class="items_list" id="desserts_items"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="addbutton">+</div>
+  </body>
+</html>
