@@ -6,7 +6,7 @@
     <title>Pizza Delivery</title>
     <link rel="stylesheet" href="styles.css" />
 
-    <script src="script.js"></script>
+    <script src="adminscript.js"></script>
   </head>
   <body>
     <div id="menu">
@@ -18,10 +18,10 @@
         <div class="right-icons">
           <img id="profpic" src="profile/user.png" />
         </div>
-        <div class="sidebar" style="display: none" id="profile-details">
-          <span class="close-btn">&times;</span>
+        <div class="sidebar" id="sidebar">
+          <a href="#" class="close-btn">&times;</a>
+
           <a href="#" class="edit-profile">Edit Profile</a>
-          <a href="#" class="prev-orders">Previous Orders</a>
           <a href="#" class="sign-out">Sign Out</a>
         </div>
       </div>
@@ -56,6 +56,62 @@
       </div>
     </div>
 
-    <div class="addbutton">+</div>
+    <div id="add_to_menu" class="add_to_menu">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Add to the Menu</h2>
+        </div>
+        <div class="add_to_menu_form" id="add_to_menu_form">
+          <div class="inputs">
+            <label for="name">Name of the dish:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name" />
+          </div>
+
+          <div class="inputs">
+            <input type="radio" id="type" name="type" value="0" />
+              <label for="deal">Deal</label><br />
+            <input type="radio" id="type" name="type" value="1" />
+              <label for="pizza">Pizza</label><br />
+            <input type="radio" id="type" name="type" value="2" />
+              <label for="pasta">Pasta</label><br />
+            <input type="radio" id="type" name="type" value="3" />
+              <label for="dessert">Dessert</label>
+          </div>
+
+          <div class="inputs">
+            <input type="radio" id="veg" name="veg" value="Vegetarian" />
+              <label for="veg">Veg</label><br />
+            <input
+              type="radio"
+              id="nonveg"
+              name="nonveg"
+              value="Non-Vegetarian"
+            />
+              <label for="nonveg">Non-Veg</label>
+          </div>
+
+          <div class="inputs">
+            <label for="price">Price:</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Enter Price"
+            />
+          </div>
+
+          <div class="inputs">
+            Upload Image:
+            <input type="file" id="image" name="image" />
+          </div>
+          <div class="submit">
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="addbutton" id="addbutton">+</div>
   </body>
 </html>
