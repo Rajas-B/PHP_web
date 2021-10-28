@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+
+
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,31 +64,31 @@
           <span class="close">&times;</span>
           <h2>Add to the Menu</h2>
         </div>
-        <div class="add_to_menu_form" id="add_to_menu_form">
+        <form action="add.php" method="POST" enctype="multipart/form-data">
           <div class="inputs">
             <label for="name">Name of the dish:</label>
             <input type="text" id="name" name="name" placeholder="Enter Name" />
           </div>
 
           <div class="inputs">
-            <input type="radio" id="type" name="type" value="0" />
+            <input type="radio" id="type" name="type" value="deals" />
               <label for="deal">Deal</label><br />
-            <input type="radio" id="type" name="type" value="1" />
+            <input type="radio" id="type" name="type" value="pizzas" />
               <label for="pizza">Pizza</label><br />
-            <input type="radio" id="type" name="type" value="2" />
+            <input type="radio" id="type" name="type" value="pastas" />
               <label for="pasta">Pasta</label><br />
-            <input type="radio" id="type" name="type" value="3" />
+            <input type="radio" id="type" name="type" value="desserts" />
               <label for="dessert">Dessert</label>
           </div>
 
           <div class="inputs">
-            <input type="radio" id="veg" name="veg" value="Vegetarian" />
+            <input type="radio" id="veg" name="veg" value="veg" />
               <label for="veg">Veg</label><br />
             <input
               type="radio"
               id="nonveg"
               name="nonveg"
-              value="Non-Vegetarian"
+              value="nonveg"
             />
               <label for="nonveg">Non-Veg</label>
           </div>
@@ -106,12 +108,21 @@
             <input type="file" id="image" name="image" />
           </div>
           <div class="submit">
-            <button type="submit">Submit</button>
+          <input type="submit" name="submit" value="submit">
           </div>
-        </div>
+
+        </form>
       </div>
     </div>
 
-    <div class="addbutton" id="addbutton">+</div>
+    <div class="addbutton" id="addbutton">+</div>  
+
+
+
+
+
+
   </body>
 </html>
+
+

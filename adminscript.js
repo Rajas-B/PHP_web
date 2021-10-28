@@ -58,28 +58,9 @@ items = {
   },
 };
 
-function addItem(sub_items) {
-  item = sub_items.id;
-  item_type = item.slice(0, -2);
-  if (!(`${item}` in cart)) {
-    cart[`${item}`] = [items[`${item_type}`][`${item}`], 1];
-  } else {
-    cart[`${item}`][1] += 1;
-  }
-  console.log(cart);
-}
-function removeItem(sub_items) {
-  item = sub_items.id;
-  if (`${item}` in cart) {
-    cart[`${item}`][1] -= 1;
-    if (cart[`${item}`][1] == 0) {
-      delete cart[`${item}`];
-    }
-  }
-  console.log(cart);
-}
-
 function showItems() {
+
+
   var innerhtml = "";
   for (item_type in items) {
     innerhtml = "";
