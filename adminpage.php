@@ -1,5 +1,12 @@
 
 
+<?php
+include_once 'database.php';
+$res_deals = mysqli_query($conn,"SELECT * FROM deals");
+$res_pizzas = mysqli_query($conn,"SELECT * FROM pizzas");
+$res_pastas = mysqli_query($conn,"SELECT * FROM pastas");
+$res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
+?>
 
 <html>
   <head>
@@ -50,13 +57,111 @@
       <hr class="horLine" />
       <div class="rest">
         <div id="items">
-          <div class="items_list" id="deals_items"></div>
-          <div class="items_list" id="pizza_items"></div>
-          <div class="items_list" id="pastas_items"></div>
-          <div class="items_list" id="desserts_items"></div>
+          <div class="items_list" id="deals_items">
+            <?php
+            while($row = mysqli_fetch_array($res_deals)) {
+              ?>
+
+
+            
+            <div class="item" id="deals">
+                            <img class="item_img" src=" <?php echo $res_deals['image'];?> ">
+                            <p class="item_name"><?php echo $res_deals['name'];?></p>
+                            <p class="item_price"><?php echo $res_deals['price'];?> Rs</p>
+                            <p class="item_type"><?php echo $res_deals['veg']=="1"?"Veg":"Non-Veg";?></p>
+                            <div class="item_btns">
+                                <button class="item_btn" id="add" onclick="">
+                                    Add
+                                </button>
+                                <button class="item_btn" id="remove" onclick="">
+                                    Remove
+                                </button>
+                            </div>
+             </div>
+             <?php }
+          ?>
+          </div>
+
+          <div class="items_list" id="pizza_items">
+          <?php
+            while($row = mysqli_fetch_array($res_pizzas)) {
+              ?>
+
+
+            
+            <div class="item" id="pizzas">
+                            <img class="item_img" src=" <?php echo $res_pizzas['image'];?> ">
+                            <p class="item_name"><?php echo $res_pizzas['name'];?></p>
+                            <p class="item_price"><?php echo $res_pizzas['price'];?> Rs</p>
+                            <p class="item_type"><?php echo $res_pizzas['veg']=="1"?"Veg":"Non-Veg";?></p>
+                            <div class="item_btns">
+                                <button class="item_btn" id="add" onclick="">
+                                    Add
+                                </button>
+                                <button class="item_btn" id="remove" onclick="">
+                                    Remove
+                                </button>
+                            </div>
+                          </div>
+                          <?php }
+          ?>
+            </div>
+          <div class="items_list" id="pastas_items">
+          <?php
+            while($row = mysqli_fetch_array($res_pastas)) {
+              ?>
+
+
+            
+            <div class="item" id="pastas">
+                            <img class="item_img" src=" <?php echo $res_pastas['image'];?> ">
+                            <p class="item_name"><?php echo $res_pastas['name'];?></p>
+                            <p class="item_price"><?php echo $res_deals['price'];?> Rs</p>
+                            <p class="item_type"><?php echo $res_pastas['veg']=="1"?"Veg":"Non-Veg";?></p>
+                            <div class="item_btns">
+                                <button class="item_btn" id="add" onclick="">
+                                    Add
+                                </button>
+                                <button class="item_btn" id="remove" onclick="">
+                                    Remove
+                                </button>
+                            </div>
+                          </div>
+                          <?php }
+          ?>
+            </div>
+          <div class="items_list" id="desserts_items"> <?php
+            while($row = mysqli_fetch_array($res_deals)) { 
+
+              ?>
+
+
+            
+            <div class="item" id="desserts">
+                            <img class="item_img" src=" <?php echo $res_desserts['image'];?> ">
+                            <p class="item_name"><?php echo $res_desserts['name'];?></p>
+                            <p class="item_price"><?php echo $res_desserts['price'];?> Rs</p>
+                            <p class="item_type"><?php echo $res_desserts['veg']=="1"?"Veg":"Non-Veg";?></p>
+                            <div class="item_btns">
+                                <button class="item_btn" id="add" onclick="">
+                                    Add
+                                </button>
+                                <button class="item_btn" id="remove" onclick="">
+                                    Remove
+                                </button>
+                            </div>
+                          </div>
+                          <?php }
+          ?>
+                        </div>
+
+
+
+           
         </div>
       </div>
-    </div>
+            </div>
+    
 
     <div id="add_to_menu" class="add_to_menu">
       <div class="modal-content">
@@ -116,9 +221,6 @@
     </div>
 
     <div class="addbutton" id="addbutton">+</div>  
-
-
-
 
 
 

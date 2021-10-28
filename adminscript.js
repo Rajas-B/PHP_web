@@ -58,34 +58,17 @@ items = {
   },
 };
 
-function showItems() {
 
-
-  var innerhtml = "";
-  for (item_type in items) {
-    innerhtml = "";
-    for (sub_items in items[`${item_type}`]) {
-      var item_prop = items[`${item_type}`][`${sub_items}`];
-      innerhtml += `<div class="item" id="${sub_items}">
-                              <img class="item_img" src="${item_prop[0]}">
-                              <p class="item_name">${item_prop[1]}</p>
-                              <p class="item_price">${item_prop[2]} Rs</p>
-                              <p class="item_type">${item_prop[3]}</p>
-                              <div class="item_btns">
-                                  <button class="item_btn" id="Edit" onclick="addItem(${sub_items})">
-                                      Edit
-                                  </button>
-                                  <button class="item_btn" id="Remove" onclick="removeItem(${sub_items})">
-                                      Remove
-                                  </button>
-                              </div>
-                            </div>`;
-    }
-    document.getElementById(`${item_type}_items`).innerHTML = innerhtml;
-  }
-}
 
 function changeItems(menu) {
+
+
+    
+
+
+
+
+
   let items_list = document.getElementsByClassName("items_list");
   let item_list_btns = document.getElementsByClassName("item_list_btns");
   for (const item of items_list) {

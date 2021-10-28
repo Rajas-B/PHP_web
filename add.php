@@ -45,16 +45,12 @@ if(isset($_POST['submit']))
         header("Location:adminpage.php");
         exit();
 	 } else {
-		echo "Error: " . $sql . "
-" . mysqli_error($conn);
+		echo "Error: " . $sql;
 	 }
-	 mysqli_close($conn);
-
+	
      }
-
-     
-    
-	 
+  
 }
+mysqli_close($conn);
 
 ?>
