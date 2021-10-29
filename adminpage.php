@@ -65,10 +65,10 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
 
             
             <div class="item" id="deals">
-                            <img class="item_img" src=" <?php echo $res_deals['image'];?> ">
-                            <p class="item_name"><?php echo $res_deals['name'];?></p>
-                            <p class="item_price"><?php echo $res_deals['price'];?> Rs</p>
-                            <p class="item_type"><?php echo $res_deals['veg']=="1"?"Veg":"Non-Veg";?></p>
+                            <img class="item_img" src=" <?php echo $row['image'];?> ">
+                            <p class="item_name"><?php echo $row['name'];?></p>
+                            <p class="item_price"><?php echo $row['price'];?> Rs</p>
+                            <p class="item_type"><?php echo $row['veg']=="1"?"Veg":"Non-Veg";?></p>
                             <div class="item_btns">
                                 <button class="item_btn" id="add" onclick="">
                                     Add
@@ -90,10 +90,10 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
 
             
             <div class="item" id="pizzas">
-                            <img class="item_img" src=" <?php echo $res_pizzas['image'];?> ">
-                            <p class="item_name"><?php echo $res_pizzas['name'];?></p>
-                            <p class="item_price"><?php echo $res_pizzas['price'];?> Rs</p>
-                            <p class="item_type"><?php echo $res_pizzas['veg']=="1"?"Veg":"Non-Veg";?></p>
+                            <img class="item_img" src=" <?php echo $row['image'];?> ">
+                            <p class="item_name"><?php echo $row['name'];?></p>
+                            <p class="item_price"><?php echo $row['price'];?> Rs</p>
+                            <p class="item_type"><?php echo $row['veg']=="1"?"Veg":"Non-Veg";?></p>
                             <div class="item_btns">
                                 <button class="item_btn" id="add" onclick="">
                                     Add
@@ -114,17 +114,17 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
 
             
             <div class="item" id="pastas">
-                            <img class="item_img" src=" <?php echo $res_pastas['image'];?> ">
-                            <p class="item_name"><?php echo $res_pastas['name'];?></p>
-                            <p class="item_price"><?php echo $res_deals['price'];?> Rs</p>
-                            <p class="item_type"><?php echo $res_pastas['veg']=="1"?"Veg":"Non-Veg";?></p>
+                            <img class="item_img" src=" <?php echo $row['image'];?> ">
+                            <p class="item_name"><?php echo $row['name'];?></p>
+                            <p class="item_price"><?php echo $row['price'];?> Rs</p>
+                            <p class="item_type"><?php echo $row['veg']=="1"?"Veg":"Non-Veg";?></p>
                             <div class="item_btns">
-                                <button class="item_btn" id="add" onclick="">
-                                    Add
-                                </button>
-                                <button class="item_btn" id="remove" onclick="">
-                                    Remove
-                                </button>
+                                
+                                
+                                 <a class="item_btn" id="add" href="" style="text-decoration: none;">Update</a> 
+                                
+                                <a class="item_btn" id="remove" href="delete.php?table=pastas&id=<?php echo $row["id"]; ?>" style="text-decoration: none;">Remove</a> 
+                                
                             </div>
                           </div>
                           <?php }
@@ -138,10 +138,10 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
 
             
             <div class="item" id="desserts">
-                            <img class="item_img" src=" <?php echo $res_desserts['image'];?> ">
-                            <p class="item_name"><?php echo $res_desserts['name'];?></p>
-                            <p class="item_price"><?php echo $res_desserts['price'];?> Rs</p>
-                            <p class="item_type"><?php echo $res_desserts['veg']=="1"?"Veg":"Non-Veg";?></p>
+                            <img class="item_img" src=" <?php echo $row['image'];?> ">
+                            <p class="item_name"><?php echo $row['name'];?></p>
+                            <p class="item_price"><?php echo $row['price'];?> Rs</p>
+                            <p class="item_type"><?php echo $row['veg']=="1"?"Veg":"Non-Veg";?></p>
                             <div class="item_btns">
                                 <button class="item_btn" id="add" onclick="">
                                     Add
@@ -191,8 +191,8 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
               <label for="veg">Veg</label><br />
             <input
               type="radio"
-              id="nonveg"
-              name="nonveg"
+              id="veg"
+              name="veg"
               value="nonveg"
             />
               <label for="nonveg">Non-Veg</label>

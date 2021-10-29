@@ -193,7 +193,7 @@ hr {
 .item_name {
   font: bolder;
   font-size: 25px;
-  margin-top: -10px;
+  margin-top: 10px;
 }
 .item_price {
   font-size: 20px;
@@ -204,19 +204,23 @@ hr {
   margin-top: -10px;
 }
 .item_btn {
-  margin-top: -10px;
-  width: 45%;
   background-color: #00c206;
   border: none;
   border-radius: 20px;
   color: white;
-  padding: 10px 32px;
+  display: inline;
+  padding: 5px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
+
   text-align: center !important;
 }
+
+a.item_btn {
+  font-size: 15px;
+}
+
 #add {
   margin-left: 10px;
   float: left;

@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   changeItems("pizza");
-  showItems();
 
   var addbtn = document.getElementById("addbutton");
 
@@ -58,19 +57,11 @@ items = {
   },
 };
 
-
-
 function changeItems(menu) {
-
-
-    
-
-
-
-
-
   let items_list = document.getElementsByClassName("items_list");
+
   let item_list_btns = document.getElementsByClassName("item_list_btns");
+
   for (const item of items_list) {
     item.style.display = "none";
   }
