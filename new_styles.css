@@ -1,0 +1,133 @@
+html, body{
+    height: 100%;
+}
+
+.title{
+    margin-left: 70px;
+    font-size: 20px;
+    margin-right: 70px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+div.title h1{
+    margin-top: 40px;
+    margin-left: 0px;
+    float: left;
+}
+div.title div{
+    float: left;
+}
+#title_image{
+    width: auto;
+    height: 120px;
+    float: left;
+}
+
+
+body{
+    margin: 0%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+hr{
+    border-top: 5px solid #a60505;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.checkout{
+    position:absolute;
+    bottom: -0;
+    width: 24%;
+}
+.checkout_btn{
+    background-color: #00c206;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    margin: 4px 2px;
+    cursor: pointer;
+    bottom: 0;
+    position: relative;
+}
+
+.box{
+    margin: 10px;
+    margin-left: 30%;
+    width: 50%;
+}
+.form_control{
+    width: 90%;
+    height: 25px;
+    padding: 3px;
+    border: none;
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
+}
+.textarea_control{
+    width: 90%;
+    border: none;
+    font-size: 15px;
+    border-bottom: 1px solid grey;
+}
+.address{
+    width: 60%;
+}
+.form-inline {
+    border: 1px solid #ccc;
+    padding: 8px 10px 4px;
+    border-radius: 2px;
+}
+.voucher_stat{
+font-size: large;
+}
+.voucher_form{
+    display: none;
+    text-transform: capitalize;
+}
+.submit_control{
+    width: 15%;
+    height: 35px;
+    padding: 5px;
+    font-size: 15px;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    border: 1px solid white;
+}
+.submit_control:hover{
+    border: 1px solid black;
+}
+.greyed{
+    opacity: 0.3;
+}
+
+
+@media (max-width: 800px){
+    div.title div{
+        height: 90px;
+    }
+    #title_image{
+        height: 90px;
+    }
+    #prof_pic{
+        height: 90px;
+    }
+}
+@media (max-width: 776px){
+    nav.nav-bar p{
+        width: 50%;
+    }
+}
+@media (max-width: 660px){
+    .item{
+        width: 90%;
+    }
+}
