@@ -11,9 +11,11 @@ delivered_at DATETIME,
 PRIMARY KEY (id)
 );
 CREATE TABLE order_content(
+    id INT NOT NULL AUTO_INCREMENT,
     order_id INT NOT NULL,
     CONSTRAINT order_id FOREIGN KEY (order_id) REFERENCES orders(id),
     menu_id INT NOT NULL,
     type TEXT NOT NULL,
-    amount INT NOT NULL DEFAULT 1
+    amount INT NOT NULL DEFAULT 1,
+    PRIMARY KEY (id)
 );
