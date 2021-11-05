@@ -91,7 +91,7 @@ $rows = mysqli_fetch_all($query);
               $cart[$key] = $dish_content["name"].",".$dish_content["price"].",".$veg.",".$dish_content["image"].",".$dish[4]; 
               ?>
               <li><?php echo $dish[4]; ?> <?php echo $dish_content["name"]; ?></li>
-              <input type="text" name="<?php echo $key; ?>" value="<?php echo $cart[$key]; ?>" >
+              <input type="text" style="display:none;" name="<?php echo $key; ?>" value="<?php echo $cart[$key]; ?>" >
           <?php }
           ?>
           </ul>
