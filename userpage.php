@@ -40,6 +40,8 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
 
           <a href="#" class="edit-profile">Edit Profile</a>
           <a href="#" id="cart-btn">View Cart</a>
+          <a href="./current_order.php" id="cart-btn">Current Order</a>
+          <a href="./previous_order.php" id="cart-btn">Previous Orders</a>
           <a href="./user_logout.php" class="sign-out">Sign Out</a>
         </div>
       </div>
@@ -288,6 +290,7 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
         function isEmpty(obj) {
           return Object.keys(obj).length === 0;
         }
+        
         function checkout(){
           if(isEmpty(cart)){
             return false;
@@ -295,9 +298,6 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
           var formData = new FormData();
           for(item in cart){
             formData.append(item, cart[item]);
-          }
-          for (var value of formData.values()) {
-            console.log(value);
           }
           fetch('./checkout.php', {
             method: "post",

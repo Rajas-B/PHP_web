@@ -2,7 +2,13 @@
 header('Access-Control-Allow-Origin: *'); 
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-$_SESSION["cart"] = $_POST;
+    if(!isset($_POST["key"])){
+        $_SESSION["cart"] = [];
+        foreach($_POST as $key=>$value){
+            $_SESSION["cart"][$key] = $value;
+        }
+    }
+    $_SESSION["cart"] = $_POST;
 }
 ?>
 <!DOCTYPE html>
@@ -29,49 +35,18 @@ $_SESSION["cart"] = $_POST;
       <hr class="horLine" />
       <div class="box">
         <h3>Check out</h3>
-        <form action="#" name="testForm" id="testForm">
-          <input
-            type="text"
-            class="form_control"
-            name="name"
-            placeholder="Please enter your name here"
-          />
-          <input
-            type="text"
-            class="form_control"
-            name="phoneNumber"
-            placeholder="Enter your phone number"
-          />
-          <input
-            type="text"
-            class="form_control address"
-            name="flat"
-            placeholder="Flat no./ Wing/ Apartment name"
-          />
-          <input
-            type="text"
-            class="form_control address"
-            name="locality"
-            placeholder="Locality"
-          />
-          <input
-            type="text"
-            class="form_control address"
-            name="city"
-            placeholder="City, Pin code"
-          /><br />
+        <form action="./store_order.php" method="post" name="testForm" id="testForm">
           <h3 id="final">Final amount :</h3>
-          <button
-            id="cart-btn"
-            class="submit_control"
-          >View Cart</button><br>
           <input
             type="submit"
-            onclick="validateForm()"
             class="submit_control"
             value="Confirm"
           />
         </form>
+        <button
+            id="cart-btn"
+            class="submit_control"
+          >View Cart</button><br>
       </div>
     </div>
     <div id="cartModal" class="modal">
@@ -98,6 +73,7 @@ $_SESSION["cart"] = $_POST;
             for(item in cart){
                 cart[item] = cart[item].split(',');
                 cart[item][1] = parseInt(cart[item][1]);
+                cart[item][4] = parseInt(cart[item][4]);
             }
             console.log(cart);
             totalCost();
@@ -123,7 +99,7 @@ $_SESSION["cart"] = $_POST;
         function totalCost(){
             var cost = 0;
             for(item in cart){
-                cost += cart[item][1];
+                cost += cart[item][1] * cart[item][4];
             }
             document.getElementById('final').innerHTML = `Final amount :${cost} ₹`;
         }

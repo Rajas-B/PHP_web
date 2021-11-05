@@ -1,7 +1,9 @@
 <?php 
 include_once 'database.php';
 session_start();
-
+if(isset($_SESSION["user"])){
+  header("Location:userpage.php");
+}
 ?>
 <html>
 <html>
@@ -58,13 +60,12 @@ session_start();
                 $is_err = 1;
               }
               if($is_err == 0){
-                echo "SELECT password FROM users WHERE name = '$name'";
-                $sql = "SELECT password FROM users WHERE name = '$name'";
+                $sql = "SELECT uid, password FROM users WHERE name = '$name'";
                 $query = mysqli_query($conn, $sql);
                 if ($query) {
                   $returned = mysqli_fetch_row($query);
-                  if($password == $returned[0]){
-                    $_SESSION['user'] = 1;
+                  if($password == $returned[1]){
+                    $_SESSION['user'] = $returned[0];
                     header('Location:userpage.php');
                   }else{
                     $is_err = 1;

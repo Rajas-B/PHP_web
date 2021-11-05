@@ -129,9 +129,9 @@ session_start();
                 $sql = "INSERT INTO users (`name`, `phone_number`, `email`, `address`, `password`)
                 VALUES ('$name','$phone_number','$email','$address', '$password')";
                 $query = mysqli_query($conn, $sql);
-
+                $last_id = mysqli_insert_id($conn);
                 if ($query) {
-                    $_SESSION["user"] = 1;
+                    $_SESSION["user"] = $last_id;
                     header("Location:userpage.php");
                     exit();
                 } else {

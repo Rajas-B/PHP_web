@@ -128,6 +128,29 @@ nav.nav-bar p:hover {
   display: flex;
   overflow: visible;
 }
+.orders{
+  margin-left: 85px;
+  margin-right: 70px;
+  border: solid #a60505;
+  border-top: none;
+  border-bottom: none;
+  height: 100%;
+  overflow: visible;
+  padding-top: 1%;
+  padding-left: 2%;
+  padding-right: 7%; 
+}
+.order_content{
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding-left: 3%;
+  padding-right: 3%;
+
+}
+.order_details{
+  font-size: 20px;
+}
 hr {
   border-top: 5px solid #a60505;
   margin-top: 0px;
@@ -429,7 +452,7 @@ a.item_btn {
   text-align: center !important;
 }
 #Check_out {
-  display: none;
+  display: block;
 }
 .box {
   margin: 10px;

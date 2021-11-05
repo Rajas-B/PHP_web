@@ -7,7 +7,7 @@ include_once 'database.php';
         header("Location:userpage.php");
     }
     if(!isset($_SESSION["user"])){
-        header("Location:userpage.php");
+        header("Location:user_login.php");
     }
     $uid = $_SESSION["user"]; 
     $price = 0;

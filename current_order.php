@@ -5,7 +5,7 @@ if(!isset($_SESSION["user"])){
 }
 include_once 'database.php';
 $uid = $_SESSION["user"];
-$sql = "SELECT * FROM orders WHERE uid = '$uid';";
+$sql = "SELECT * FROM orders WHERE uid = '$uid' AND (completed='0') ORDER BY ordered_at DESC;";
 $query = mysqli_query($conn, $sql);
 $rows = mysqli_fetch_all($query);
 
@@ -17,9 +17,25 @@ $rows = mysqli_fetch_all($query);
     <title>Pizza Delivery</title>
     <link rel="stylesheet" type="text/css" href="styles.css?version=51"/>
 
-    <script src="script.js"></script>
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        
 
+        var profbtn = document.getElementById("profpic");
+
+        var closebtn = document.getElementsByClassName("close-btn")[0];
+
+
+        profbtn.onclick = function () {
+            document.getElementById("sidebar").style.width = "250px";
+        };
+
+        closebtn.onclick = function () {
+            document.getElementById("sidebar").style.width = "0";
+        };
+
+        
+        });
     </script>
   </head>
   <body>
@@ -36,7 +52,8 @@ $rows = mysqli_fetch_all($query);
           <a href="#" class="close-btn">&times;</a>
 
           <a href="#" class="edit-profile">Edit Profile</a>
-          <a href="#" id="cart-btn">View Cart</a>
+          <a href="./userpage.php">Back to Home</a>
+          <a href="./previous_order.php" id="cart-btn">Previous Orders</a>
           <a href="./user_logout.php" class="sign-out">Sign Out</a>
         </div>
       </div>
@@ -55,9 +72,9 @@ $rows = mysqli_fetch_all($query);
               $dishes = mysqli_fetch_all($query);
               echo "<ul>";
               foreach($dishes as $dish){
-                $sql = "SELECT * from $dish[2] WHERE id='$dish[1]';";
+                $sql = "SELECT * from $dish[3] WHERE id='$dish[2]';";
                 $dish_content = mysqli_fetch_row(mysqli_query($conn, $sql));
-                echo "<li>".$dish[3]." ".$dish_content[1]."</li>";
+                echo "<li>".$dish[4]." ".$dish_content[1]."</li>";
               }
               echo "</ul>";
             }
