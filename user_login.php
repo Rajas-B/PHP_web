@@ -45,6 +45,7 @@ if(isset($_SESSION["user"])){
             class="submit_control"
           >Confirm</button>
         </form>
+        <a href="./user_reg.php">Don't have an account yet? Sign up here.</a>
         <?php 
           $err = "";
           $is_err = 0;

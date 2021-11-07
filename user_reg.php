@@ -87,6 +87,7 @@ session_start();
             class="submit_control"
           >Confirm</button>
         </form>
+        <a href="./user_login.php">Already have an account? Log in here.</a>
         <?php 
         $err = "";
         $is_err = 0;

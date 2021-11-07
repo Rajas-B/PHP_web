@@ -20,7 +20,6 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
     <title>Pizza Delivery</title>
     <link rel="stylesheet" href="styles.css" />
 
-    <script src="script.js"></script>
     <script>
 
     </script>
@@ -192,7 +191,19 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
           var modal = document.getElementById("cartModal");
           var cart_span = document.getElementsByClassName("close_modal")[0];
           var btn = document.getElementById("cart-btn");
+          changeItems("pizza");
+          var profbtn = document.getElementById("profpic");
 
+          var closebtn = document.getElementsByClassName("close-btn")[0];
+
+
+          profbtn.onclick = function () {
+              document.getElementById("sidebar").style.width = "250px";
+          };
+
+          closebtn.onclick = function () {
+              document.getElementById("sidebar").style.width = "0";
+          };
           btn.onclick = function() {
             modal.style.display = "block";
             fcItems();
@@ -208,7 +219,18 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
               }
           }
         });
-        
+        function changeItems(menu) {
+          let items_list = document.getElementsByClassName("items_list");
+          let item_list_btns = document.getElementsByClassName("item_list_btns");
+          for (const item of items_list) {
+            item.style.display = "none";
+          }
+          for (const item of item_list_btns) {
+            item.style.backgroundColor = "#e85d5d";
+          }
+          document.getElementById(`${menu}`).style.backgroundColor = "#a60505";
+          document.getElementById(`${menu}_items`).style.display = "block";
+        }
         cart = {}
 
         function add_to_cart(){

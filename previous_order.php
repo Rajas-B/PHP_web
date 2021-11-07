@@ -3,7 +3,7 @@ session_start();
 include_once 'database.php';
 
 if(!isset($_SESSION["user"])){
-    header("Location:userpage.php");
+    header("Location:user_login.php");
 }
 include_once 'database.php';
 $uid = $_SESSION["user"];

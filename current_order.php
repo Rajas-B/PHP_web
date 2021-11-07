@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(!isset($_SESSION["user"])){
-    header("Location:userpage.php");
+    header("Location:user_login.php");
 }
 include_once 'database.php';
 $uid = $_SESSION["user"];
