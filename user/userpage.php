@@ -1,8 +1,7 @@
-
-
 <?php
-include_once 'database.php';
 session_start();
+include_once 'database.php';
+
 if(!isset($_SESSION['user'])){
   header("Location:user_login.php");
 }
@@ -20,9 +19,9 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
     <title>Pizza Delivery</title>
     <link rel="stylesheet" href="../style/styles.css" />
 
-    <script src="script.js"></script>
+    
     <script>
-
+     
     </script>
   </head>
   <body>
@@ -33,7 +32,7 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
           <h1>Pizza</h1>
         </div>
         <div class="right-icons">
-          <img id="profpic" src="profile/user.png" />
+          <img id="profpic" src="../assets/profile/user.png" />
         </div>
         <div class="sidebar" id="sidebar">
           <a href="#" class="close-btn">&times;</a>
@@ -188,11 +187,23 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
           
           </div>
       <script>
-        document.addEventListener('DOMContentLoaded', () => {
+         document.addEventListener('DOMContentLoaded', () => {
           var modal = document.getElementById("cartModal");
           var cart_span = document.getElementsByClassName("close_modal")[0];
           var btn = document.getElementById("cart-btn");
+          changeItems("pizza");
+          var profbtn = document.getElementById("profpic");
 
+          var closebtn = document.getElementsByClassName("close-btn")[0];
+
+
+          profbtn.onclick = function () {
+              document.getElementById("sidebar").style.width = "250px";
+          };
+
+          closebtn.onclick = function () {
+              document.getElementById("sidebar").style.width = "0";
+          };
           btn.onclick = function() {
             modal.style.display = "block";
             fcItems();
@@ -208,7 +219,18 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
               }
           }
         });
-        
+        function changeItems(menu) {
+          let items_list = document.getElementsByClassName("items_list");
+          let item_list_btns = document.getElementsByClassName("item_list_btns");
+          for (const item of items_list) {
+            item.style.display = "none";
+          }
+          for (const item of item_list_btns) {
+            item.style.backgroundColor = "#e85d5d";
+          }
+          document.getElementById(`${menu}`).style.backgroundColor = "#a60505";
+          document.getElementById(`${menu}_items`).style.display = "block";
+        }
         cart = {}
 
         function add_to_cart(){
@@ -307,6 +329,7 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
           .then(response => window.location.href = response.url);
 
         }
+        
         
       </script>
       

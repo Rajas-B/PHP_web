@@ -11,9 +11,11 @@ $query = mysqli_query($conn, $sql);
 $queryi = mysqli_query($conn, $sqli);
 
 
-include_once 'queue.php';
 
-array_push($freeempqueue, $id);
+
+include_once '../assign.php';
+
+
 include_once 'nextprev.php';
 
 

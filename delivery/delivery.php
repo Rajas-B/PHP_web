@@ -1,11 +1,10 @@
 <?php
+session_start();
 include_once '.././assign.php';
 include_once './database.php';
-session_start();
 if(!isset($_SESSION['user'])){
   header("Location:login.php");
 }
-
 ?>
 
 <html>
@@ -67,17 +66,52 @@ if(!isset($_SESSION['user'])){
       <hr class="horLine" />
       <div>
 <?php
-      $sqld = "SELECT assigned FROM deliveryboy WHERE id=".$_SESSION['user'];
+      $sqld = "SELECT assigned FROM deliveryboy WHERE candidate_id=".$_SESSION['user']. " AND assigned<>0 ";
       $result = mysqli_query($conn, $sqld);
       if ($result) {
-        $returned = mysqli_fetch_row($result);
-        echo $returned;
-       
-          header('Location:delivery.php');
+        $row = mysqli_fetch_row($result);
         
-        exit();
+         ?>
+         
+          <div>
+            <p>ORDER ID:<?php echo $row[0]?></p>
+            <?php
+            $sqlo = mysqli_query($conn,"SELECT * FROM order_content WHERE order_id=".$row[0]);
+   
+            while($r = mysqli_fetch_row($sqlo)){
+
+              $sqlr = mysqli_query($conn,"SELECT * FROM $r[3] WHERE id=".$r[2]);
+
+              $list = mysqli_fetch_row($sqlr);
+
+
+              ?>
+              <p><?php echo $r[4] . " ".$r[3]. ": ".$list[1] ?></p>
+              
+
+
+              <?php
+
+            }
+           
+
+
+
+
+            
+
+
+
+
+
+        
+
+
+          
+        mysqli_free_result($result);
+          
       } else {
-          echo "Error: " . $sql;
+          echo "Error: " . $sqld;
       }
 
       ?>

@@ -1,8 +1,7 @@
 <?php 
-ob_start();
 include_once 'database.php';
 session_start();
-ob_end_flush();
+
 ?>
 <head>
         <title>
@@ -133,7 +132,7 @@ ob_end_flush();
                 if ($query) {
                     $_SESSION["user"] = $last_id;
                     header("Location:./userpage.php");
-                    exit();
+                   
                 } else {
                     echo "Error: " . $sql;
                 }

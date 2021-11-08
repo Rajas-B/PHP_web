@@ -1,11 +1,7 @@
 <?php 
+session_start();
 include_once './database.php';
 include_once '.././assign.php';
-
-
-session_start();
-
-
 if(isset($_POST['submit'])){
 
     $phone = $_POST['phonenumber'];
@@ -23,25 +19,16 @@ if(isset($_POST['submit'])){
         $_SESSION['user'] = $returned[0];
         $_SESSION['name'] = $returned[2];
         header('Location:delivery.php');
-      }else{
+      }
+      else{
         echo "Invalid Password";
       }
-      exit();
+      
     } else {
         echo "Error: " . $sql;
     }
 
 }
-
-
-if(isset($_SESSION["user"])){
-  header("Location:delivery.php");
-}
-
-
-
-
-
 ?>
 <html>
     <head>

@@ -20,7 +20,7 @@ else{
   
 
 } else {
-    echo "Error deleting record: " . mysqli_error($conn);
+    echo "Error: " . mysqli_error($conn);
 }
 
 mysqli_close($conn);
