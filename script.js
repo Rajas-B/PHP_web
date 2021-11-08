@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   changeItems("pizza");
   showItems();
 
-  
   var modal = document.getElementById("cartModal");
 
   var btn = document.getElementById("cart_pic");
@@ -12,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var closebtn = document.getElementsByClassName("close-btn")[0];
 
   var span = document.getElementsByClassName("close")[0];
-
- 
 
   btn.onclick = function () {
     modal.style.display = "block";

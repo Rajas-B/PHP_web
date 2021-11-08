@@ -128,7 +128,7 @@ nav.nav-bar p:hover {
   display: flex;
   overflow: visible;
 }
-.orders{
+.orders {
   margin-left: 85px;
   margin-right: 70px;
   border: solid #a60505;
@@ -138,17 +138,16 @@ nav.nav-bar p:hover {
   overflow: visible;
   padding-top: 1%;
   padding-left: 2%;
-  padding-right: 7%; 
+  padding-right: 7%;
 }
-.order_content{
+.order_content {
   width: 100%;
   border: 1px solid black;
   border-radius: 20px;
   padding-left: 3%;
   padding-right: 3%;
-
 }
-.order_details{
+.order_details {
   font-size: 20px;
 }
 hr {
@@ -559,4 +558,72 @@ a.item_btn {
   .item {
     width: 90%;
   }
+}
+.next,
+.previous {
+  background-color: red;
+  color: black;
+  padding: 0.5rem;
+  font-family: sans-serif;
+
+  border-radius: 0.3rem;
+}
+.group {
+  position: absolute;
+  left: 570px;
+  top: 360px;
+}
+.add_can {
+  background-color: green;
+  color: black;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  margin: 25px;
+
+  border-radius: 0.3rem;
+}
+.pdf {
+  position: absolute;
+  left: 550px;
+  top: 210px;
+}
+.remove_can {
+  background-color: green;
+  color: black;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  margin: 25px;
+  float: right;
+  border-radius: 0.3rem;
+}
+.can {
+  position: absolute;
+  left: 570px;
+  top: 250px;
+}
+
+.next:hover {
+  border: 1px solid black;
+}
+.previous:hover {
+  border: 1px solid black;
+}
+
+.prof_img {
+  margin: 50px;
+  height: 400px;
+  width: 400px;
+  border-radius: 50px;
+  border-color: black;
+  border-width: bold;
+}
+.sub2 {
+  margin-top: 80px;
+  width: 60%;
+  float: right;
+}
+
+.sub1 {
+  width: 30%;
+  float: left;
 }

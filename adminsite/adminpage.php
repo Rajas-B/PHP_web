@@ -1,11 +1,17 @@
-
-
 <?php
 include_once 'database.php';
+include_once '.././assign.php';
 $res_deals = mysqli_query($conn,"SELECT * FROM deals");
 $res_pizzas = mysqli_query($conn,"SELECT * FROM pizzas");
 $res_pastas = mysqli_query($conn,"SELECT * FROM pastas");
 $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
+$can=0;
+$result = mysqli_query($conn, "SELECT * FROM candidate WHERE hired = 0 LIMIT 1 ");
+if($canid = mysqli_fetch_array($result))
+           $can=$canid['id'];
+
+           
+           
 ?>
 
 <html>
@@ -13,7 +19,7 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Pizza Delivery</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../style/styles.css" />
 
     <script src="adminscript.js"></script>
   </head>
@@ -21,14 +27,17 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
     <div id="menu">
       <div class="title">
         <div>
-          <img id="title_image" src="logo_pizza.png" alt="" />
+          <img id="title_image" src="../assets/profile/logo_pizza.png" alt="" />
           <h1>Pizza</h1>
         </div>
         <div class="right-icons">
-          <img id="profpic" src="profile/user.png" />
+          <img id="profpic" src="../assets/profile/user.png" />
         </div>
         <div class="sidebar" id="sidebar">
           <a href="#" class="close-btn">&times;</a>
+          <a href="show.php?id=<?php echo $can;?> ">
+          View Applicant Details </a>
+
 
           <a href="#" class="edit-profile">Edit Profile</a>
           <a href="#" class="sign-out">Sign Out</a>
@@ -73,9 +82,8 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
                                 <button class="item_btn" id="add" onclick="">
                                     Add
                                 </button>
-                                <button class="item_btn" id="remove" onclick="">
-                                    Remove
-                                </button>
+                                <a class="item_btn" id="remove" href="delete.php?table=deals&id=<?php echo $row["id"]; ?>" style="text-decoration: none;">Remove</a> 
+                                
                             </div>
              </div>
              <?php }
@@ -98,9 +106,8 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
                                 <button class="item_btn" id="add" onclick="">
                                     Add
                                 </button>
-                                <button class="item_btn" id="remove" onclick="">
-                                    Remove
-                                </button>
+                                <a class="item_btn" id="remove" href="delete.php?table=pizzas&id=<?php echo $row["id"]; ?>" style="text-decoration: none;">Remove</a> 
+                                
                             </div>
                           </div>
                           <?php }
@@ -121,7 +128,7 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
                             <div class="item_btns">
                                 
                                 
-                                 <a class="item_btn" id="add" href="" style="text-decoration: none;">Update</a> 
+                                 <a class="item_btn" id="update" href="" style="text-decoration: none;">Update</a> 
                                 
                                 <a class="item_btn" id="remove" href="delete.php?table=pastas&id=<?php echo $row["id"]; ?>" style="text-decoration: none;">Remove</a> 
                                 
@@ -146,9 +153,8 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
                                 <button class="item_btn" id="add" onclick="">
                                     Add
                                 </button>
-                                <button class="item_btn" id="remove" onclick="">
-                                    Remove
-                                </button>
+                                <a class="item_btn" id="remove" href="delete.php?table=desserts&id=<?php echo $row["id"]; ?>" style="text-decoration: none;">Remove</a> 
+                                
                             </div>
                           </div>
                           <?php }

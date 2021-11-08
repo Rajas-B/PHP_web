@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 
      if(in_array($filecheck,$fileextstored)) {
 
-        $destinationfile = 'pizzaupload/'.$filename;
+        $destinationfile = '../databaseassets/'.$filename;
         move_uploaded_file($filetmp,$destinationfile);
 
         $sql = "INSERT INTO ".$type." (`name`, `veg`, `price`, `image`)

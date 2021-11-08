@@ -20,17 +20,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </title>
         <script>0</script>
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../style/styles.css" />
 
     </head>
     <body>
     <div id="Check_out">
       <div class="title">
         <div>
-          <img id="title_image" src="logo_pizza.png" alt="" />
+          <img id="title_image" src="../assets/profile/logo_pizza.png" alt="" />
           <h1>Pizza</h1>
         </div>
-        <img id="back_png" onclick="go_back()" src="back.png" />
+        <img id="back_png" onclick="go_back()" src="../assets/profile/back.png" />
       </div>
       <hr class="horLine" />
       <div class="box">
