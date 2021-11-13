@@ -37,7 +37,7 @@ $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
         <div class="sidebar" id="sidebar">
           <a href="#" class="close-btn">&times;</a>
 
-          <a href="#" class="edit-profile">Edit Profile</a>
+          <a href="./edit_profile.php" class="edit-profile">Edit Profile</a>
           <a href="#" id="cart-btn">View Cart</a>
           <a href="./current_order.php" id="cart-btn">Current Order</a>
           <a href="./previous_order.php" id="cart-btn">Previous Orders</a>
