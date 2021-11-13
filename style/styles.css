@@ -687,3 +687,12 @@ a.item_btn {
   color: white;
   padding: 20px;
 }
+.noorder {
+  margin-left: 240px;
+  margin-top: 140px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 5px solid red;
+  display: inline-block;
+  padding: 70px;
+}

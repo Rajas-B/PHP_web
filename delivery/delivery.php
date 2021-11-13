@@ -188,7 +188,7 @@ if(!isset($_SESSION['user'])){
           
       } else {
         ?>
-        <div>As of now, No order has been assigned to you!! Make sure to freshen up before your next order</div>
+        <div class="noorder">As of now, No order has been assigned to you!! Yay! Break Time</div>
         <?php
       }
 
