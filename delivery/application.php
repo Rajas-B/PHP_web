@@ -1,7 +1,5 @@
 <?php 
 include_once './database.php';
-
-
 ?>
 <html>
     <head>
@@ -26,7 +24,9 @@ include_once './database.php';
       </div>
       <hr class="horLine" />
       <div class="box">
+      
         <h3> </h3>
+        <div class="form-cont">
         <form action="add.php" method="POST" enctype="multipart/form-data">
           <input
             type="text"
@@ -60,10 +60,10 @@ include_once './database.php';
           <br/>
           </br>
           <div class="upload">
-          <input name="prof" id="prof" type="file" class="file-upload-field" accept=".jpg, .jpeg, .png" hidden/>
-          <label for="prof" class="label"> Upload Profile Picture</label>
-          <span id="file-chosen1"></span>
-</div>
+            <input name="prof" id="prof" type="file" class="file-upload-field" accept=".jpg, .jpeg, .png" hidden/>
+            <label for="prof" class="label"> Upload Profile Picture</label>
+            <span id="file-chosen1"></span>
+          </div>
           <br/>
           <div class="upload">
           <input name="aadhar" id="aadhar" type="file" class="file-upload-field" accept=".pdf" hidden/>
@@ -75,21 +75,21 @@ include_once './database.php';
           <input name="license" id="license" type="file" class="file-upload-field" accept=".pdf" hidden>
           <label for="license" class="label">  Upload Driving License</label>
           <span id="file-chosen3"></span>
-</div>
+          </div>
           <br>
-      <br>
+        <br>
 
 
 
           
           
-          <legend class="formcontrol">Languages known:</legend>
+          <legend class="lang">Languages known:</legend>
           <input type="checkbox" id="hindi" name="lang[]" value="Hindi">
-          <label for="hindi"> Hindi</label>
+          <label for="hindi" class="lang"> Hindi</label>
           <input type="checkbox" id="english" name="lang[]" value="English">
-          <label for="english"> English</label>
+          <label for="english" class="lang"> English</label>
           <input type="checkbox" id="marathi" name="lang[]" value="Marathi">
-          <label for="marathi"> Marathi</label>
+          <label for="marathi" class="lang"> Marathi</label>
 
           <br />
           <button
@@ -97,6 +97,7 @@ include_once './database.php';
             class="submit_control" name="submit"
           >Submit Application</button>
         </form>
+     </div>
      </div>
 
      

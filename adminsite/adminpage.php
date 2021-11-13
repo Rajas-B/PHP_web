@@ -7,11 +7,9 @@ $res_pastas = mysqli_query($conn,"SELECT * FROM pastas");
 $res_desserts = mysqli_query($conn,"SELECT * FROM desserts");
 $can=0;
 $result = mysqli_query($conn, "SELECT * FROM candidate WHERE hired = 0 LIMIT 1 ");
-if($canid = mysqli_fetch_array($result))
-           $can=$canid['id'];
-
-           
-           
+ if($canid = mysqli_fetch_array($result))
+  {$can=$canid['id'];}
+    
 ?>
 
 <html>

@@ -1,13 +1,9 @@
 <?php
 include_once 'database.php';
-
-$sql = "DELETE FROM ". $_GET["table"] . " WHERE id=" . $_GET["id"] ." ";
-
-if (mysqli_query($conn, $sql)) {
-    mysqli_close($conn);
-
-} else {
-    echo "Error deleting record: " . mysqli_error($conn);
-}
+if(count($_POST)>0) {
+    mysqli_query($conn,UPDATE `pastas` SET `id`='[value-1]',`name`='[value-2]',
+    `veg`='[value-3]',`price`='[value-4]',`image`='[value-5]',`avail`='[value-6]' WHERE 1);
+    $message = "Record Modified Successfully";
+    }
 
 ?>

@@ -1,8 +1,5 @@
 <?php
 include_once 'database.php';
-
-
-
 if(isset($_POST['submit']))
 {	 
      $name = $_POST['name'];
@@ -39,13 +36,13 @@ if(isset($_POST['submit']))
 
         $sql = "INSERT INTO candidate (name, phone, image, aadhar, license, password, languages) 
         VALUES ('$name','$phone','$destinationfile','$aadhardestinationfile','$licensedestinationfile','$password','$langs')";
-
+       
        $query = mysqli_query($conn, $sql);
 
        if ($query) {
     
         header("Location:thankyou.php");
-        exit();
+       
 	 } else {
 		echo "Error: " . $sql;
 	 }
