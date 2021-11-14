@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once '.././assign.php';
-include_once './database.php';
+include_once '../database.php';
 
 
 if(!isset($_SESSION['user'])){
