@@ -77,9 +77,7 @@ $result = mysqli_query($conn, "SELECT * FROM candidate WHERE hired = 0 LIMIT 1 "
                             <p class="item_price"><?php echo $row['price'];?> Rs</p>
                             <p class="item_type"><?php echo $row['veg']=="1"?"Veg":"Non-Veg";?></p>
                             <div class="item_btns">
-                                <button class="item_btn" id="add" onclick="">
-                                    Add
-                                </button>
+                             
                                 <a class="item_btn" id="remove" href="delete.php?table=deals&id=<?php echo $row["id"]; ?>" style="text-decoration: none;">Remove</a> 
                                 
                             </div>
@@ -101,9 +99,7 @@ $result = mysqli_query($conn, "SELECT * FROM candidate WHERE hired = 0 LIMIT 1 "
                             <p class="item_price"><?php echo $row['price'];?> Rs</p>
                             <p class="item_type"><?php echo $row['veg']=="1"?"Veg":"Non-Veg";?></p>
                             <div class="item_btns">
-                                <button class="item_btn" id="add" onclick="">
-                                    Add
-                                </button>
+                               
                                 <a class="item_btn" id="remove" href="delete.php?table=pizzas&id=<?php echo $row["id"]; ?>" style="text-decoration: none;">Remove</a> 
                                 
                             </div>
@@ -126,7 +122,7 @@ $result = mysqli_query($conn, "SELECT * FROM candidate WHERE hired = 0 LIMIT 1 "
                             <div class="item_btns">
                                 
                                 
-                                 <a class="item_btn" id="update" href="" style="text-decoration: none;">Update</a> 
+                              
                                 
                                 <a class="item_btn" id="remove" href="delete.php?table=pastas&id=<?php echo $row["id"]; ?>" style="text-decoration: none;">Remove</a> 
                                 
@@ -148,9 +144,7 @@ $result = mysqli_query($conn, "SELECT * FROM candidate WHERE hired = 0 LIMIT 1 "
                             <p class="item_price"><?php echo $row['price'];?> Rs</p>
                             <p class="item_type"><?php echo $row['veg']=="1"?"Veg":"Non-Veg";?></p>
                             <div class="item_btns">
-                                <button class="item_btn" id="add" onclick="">
-                                    Add
-                                </button>
+                               
                                 <a class="item_btn" id="remove" href="delete.php?table=desserts&id=<?php echo $row["id"]; ?>" style="text-decoration: none;">Remove</a> 
                                 
                             </div>

@@ -13,8 +13,8 @@
                 <br><br>
                 <div class="windows">
                     <div class="window"><a href="./user/userpage.php">Order pizzas</a></div>
-                    <div class="window"><a href="./user/userpage.php">Admin login</a></div>
-                    <div class="window"><a href="./user/userpage.php">Delivery person login</a></div>
+                    <div class="window"><a href="./adminsite/login.php">Admin login</a></div>
+                    <div class="window"><a href="./delivery/login.php">Delivery person login</a></div>
                 </div>
             </div>
         </div>
