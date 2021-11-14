@@ -1,0 +1,54 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+.bg {
+  background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%), url("home_pizza.webp");
+  background-image:  -moz-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%), url("home_pizza.webp");
+  background-image:  -o-linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%), url("home_pizza.webp");
+  background-image:  linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%), url("home_pizza.webp");
+
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.welcome{
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  
+  font-family: 'Times New Roman', Georgia, Times, serif;
+  font-size: 70px;
+  color: white;
+  font-weight: 600;
+  align-items: center;
+}
+
+.windows{
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.window{
+  font-size: 20px !important;
+  font-weight: 300 !important;
+}
+a{
+  color: white;
+}
