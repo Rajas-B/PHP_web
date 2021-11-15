@@ -1,4 +1,3 @@
-
 <?php
 include_once './database.php';
 
@@ -91,6 +90,8 @@ if($row = mysqli_fetch_array($next))
 
 
 ?>
+
+<a href="adminpage.php" class="back">Go to Home Page</a>  
 </div>
 </div>
 </div>

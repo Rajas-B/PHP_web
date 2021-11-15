@@ -148,7 +148,7 @@ if(!isset($_SESSION['user'])){
                 border-radius:10px;
                 color: black;"
                 
-                href="picked.php?id=<?php echo $order[0]; ?>">Picked it up ?</a> 
+                href="picked.php?id=<?php echo $order[0]; ?>">Did you pick it up ?</a> 
               
                <?php  
                   }
@@ -166,7 +166,7 @@ if(!isset($_SESSION['user'])){
                 border-radius:10px;
                 color: black;"
                 
-                href="delivered.php?id=<?php echo $row[0];?>&cand=<?php echo $row[1];?>">Delivered ?</a> 
+                href="delivered.php?id=<?php echo $row[0];?>&cand=<?php echo $row[1];?>">Was it delivered ?</a> 
 
                
 

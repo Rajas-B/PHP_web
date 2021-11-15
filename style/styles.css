@@ -5,6 +5,39 @@ body {
 #menu {
   height: 100%;
 }
+
+.table {
+  margin: 50px;
+}
+.back {
+  color: white;
+  position: absolute;
+  left: 700px;
+  top: 40px;
+
+  width: 150px;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 .title {
   margin-left: 70px;
   font-size: 20px;
