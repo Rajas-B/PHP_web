@@ -26,7 +26,7 @@ $rows = mysqli_fetch_all($query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Pizza Delivery</title>
-    <link rel="stylesheet" type="text/css" href="../style/styles.cssstyles.css?version=51"/>
+    <link rel="stylesheet" type="text/css" href="../style/styles.css"/>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -62,7 +62,7 @@ $rows = mysqli_fetch_all($query);
         <div class="sidebar" id="sidebar">
           <a href="#" class="close-btn">&times;</a>
 
-          <a href="#" class="edit-profile">Edit Profile</a>
+          <a href="./edit_profile.php" class="edit-profile">Edit Profile</a>
           <a href="./userpage.php">Back to Home</a>
           <a href="./user_logout.php" class="sign-out">Sign Out</a>
         </div>

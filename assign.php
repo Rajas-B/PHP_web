@@ -33,16 +33,10 @@ for ($x = 1; $x <= $size; $x++) {
     break;
     }
     
-     echo "hi";
-    echo $size;
-    echo $freeempqueue;
-    print_r($orderqueue);
-    
-
     $id = array_shift($freeempqueue);
     $orderid = array_shift($orderqueue);
 
-    $sqli = "UPDATE orders SET addedtoqueue=-1, status='On the way'  WHERE id=$orderid"; //removed it from the queue
+    $sqli = "UPDATE orders SET addedtoqueue=-1 WHERE id=$orderid"; //removed it from the queue
 
     $sql = "UPDATE deliveryboy SET busy=1, assigned=".$orderid." WHERE id=$id";
     mysqli_query($conn, $sqli);

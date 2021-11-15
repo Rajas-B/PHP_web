@@ -1,5 +1,5 @@
 <?php 
-include_once '../database.php';
+include_once './database.php';
 session_start();
 if(!isset($_SESSION['user'])){
     header("Location:user_login.php");
@@ -19,7 +19,7 @@ $row = mysqli_fetch_array($query);
         </title>
         <script>0</script>
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../style/styles.css" />
     
     </head>
     <body>
@@ -27,11 +27,11 @@ $row = mysqli_fetch_array($query);
     <div id="Check_out">
     <div class="title">
         <div>
-          <img id="title_image" src="logo_pizza.png" alt="" />
+          <img id="title_image" src="../assets/profile/logo_pizza.png" alt="" />
           <h1>Pizza</h1>
         </div>
         <div class="right-icons">
-          <img id="profpic" src="profile/user.png" />
+          <img id="profpic" src="../assets/profile/user.png" />
         </div>
         <div class="sidebar" id="sidebar">
           <a href="#" class="close-btn">&times;</a>

@@ -18,7 +18,7 @@ $rows = mysqli_fetch_all($query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Pizza Delivery</title>
-    <link rel="stylesheet" type="text/css" href="../style/styles.css?version=51"/>
+    <link rel="stylesheet" type="text/css" href="../style/styles.css"/>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -54,7 +54,7 @@ $rows = mysqli_fetch_all($query);
         <div class="sidebar" id="sidebar">
           <a href="#" class="close-btn">&times;</a>
 
-          <a href="#" class="edit-profile">Edit Profile</a>
+          <a href="./edit_profile.php" class="edit-profile">Edit Profile</a>
           <a href="./userpage.php">Back to Home</a>
           <a href="./previous_order.php" id="cart-btn">Previous Orders</a>
           <a href="./user_logout.php" class="sign-out">Sign Out</a>
@@ -81,7 +81,19 @@ $rows = mysqli_fetch_all($query);
               }
               echo "</ul>";
             }
+
+         
+
           ?>
+
+          <div>
+            Where is your order? <b><?php echo $row[3]?><b>
+          </div>
+          <br>
+          
+
+       
+        
         </div><br>
       <?php } ?>
     </div>
