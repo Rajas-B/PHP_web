@@ -1,5 +1,5 @@
 <?php 
-include_once './database.php';
+include_once '../database.php';
 
 $id = $_GET['id'];
 $sqlupdateorders = "UPDATE orders SET completed=-1, status='On the way' WHERE id=$id";

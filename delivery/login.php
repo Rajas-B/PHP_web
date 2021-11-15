@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once './database.php';
+include_once '../database.php';
 include_once '.././assign.php';
 if(isset($_POST['submit'])){
 
