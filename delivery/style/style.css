@@ -88,7 +88,7 @@ hr {
 }
 
 .lang {
-  color: white;
+  color: grey;
   font-size: 15px;
 }
 .label {
@@ -110,6 +110,6 @@ hr {
   border-style: solid;
 
   border-width: 3px;
-  background-color: #db1e1e;
+
   padding: 50px;
 }

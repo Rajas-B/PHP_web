@@ -37,8 +37,8 @@ $result = mysqli_query($conn, "SELECT * FROM candidate WHERE hired = 0 LIMIT 1 "
           View Applicant Details </a>
 
 
-          <a href="#" class="edit-profile">Edit Profile</a>
-          <a href="#" class="sign-out">Sign Out</a>
+        
+          <a href="./logout.php" class="sign-out">Sign Out</a>
         </div>
       </div>
       <nav class="nav-bar">

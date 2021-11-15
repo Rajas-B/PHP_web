@@ -16,7 +16,13 @@
                     <div class="window"><a href="./adminsite/login.php">Admin login</a></div>
                     <div class="window"><a href="./delivery/login.php">Delivery person login</a></div>
                 </div>
-            </div>
+            </div><div class="job">
+        <a href="./delivery/application.php">Looking for a Pizza Delivery job? Apply here.</a>
+</div>
         </div>
+
+        
+            
+</footer>
     </body>
 </html>

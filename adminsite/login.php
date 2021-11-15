@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include_once './database.php';
 if(isset($_POST['submit'])){
 
@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
 
    
       if($passwd == "admin@123" && $username=="admin"){
-       
+        $_SESSION['user']  = "admin";
         header('Location:adminpage.php');
       }
 } 
