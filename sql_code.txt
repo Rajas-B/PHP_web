@@ -1,0 +1,30 @@
+CREATE TABLE orders(
+id INT NOT NULL AUTO_INCREMENT,
+uid INT NOT NULL,
+CONSTRAINT uid FOREIGN KEY (uid) REFERENCES users(uid),
+amount INT NOT NULL,
+status TEXT NOT NULL DEFAULT 'In the kitchen',
+completed TINYINT NOT NULL DEFAULT 0,
+feedback TEXT,
+ordered_at DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+delivered_at DATETIME,
+addedtoqueue INT NOT NULL DEFAULT 0,
+PRIMARY KEY (id)
+);
+CREATE TABLE order_content(
+    id INT NOT NULL AUTO_INCREMENT,
+    order_id INT NOT NULL,
+    CONSTRAINT order_id FOREIGN KEY (order_id) REFERENCES orders(id),
+    menu_id INT NOT NULL,
+    type TEXT NOT NULL,
+    amount INT NOT NULL DEFAULT 1,
+    PRIMARY KEY (id)
+);
+CREATE TABLE deliveryboy(
+    id INT NOT NULL AUTO_INCREMENT,
+    candidate_id INT NOT NULL,
+    CONSTRAINT candidate_id FOREIGN KEY (candidate_id) REFERENCES candidate(id),
+    busy INT NULL DEFAULT 0,
+    assigned INT NOT NULL DEFAULT 0,
+    PRIMARY KEY (id)
+);
